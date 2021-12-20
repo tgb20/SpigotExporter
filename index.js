@@ -30,8 +30,8 @@ app.get('/metrics', (req, res) => {
     let responseString = '';
     responseString += `# HELP spigot_total_downloads The total number of downloads for this account.\n# TYPE spigot_total_downloads counter\nspigot_total_downloads ${db.get('total_downloads')}\n\n`;
     db.get('resources').forEach(resource => {
-        responseString += `# HELP spigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_downloads The total number of downloads for this plugin.\n# TYPE spigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_downloads counter\nspigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_downloads ${resource.stats.downloads}\n\n`;
-        responseString += `# HELP spigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_rating The rating for this plugin.\n# TYPE spigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_rating counter\nspigot_${resource.title.replaceAll(' ', '_').replaceAll('-', '_')}_rating ${resource.stats.rating}\n\n`;
+        responseString += `# HELP spigot_${resource.title}_downloads The total number of downloads for this plugin.\n# TYPE spigot_${resource.title}_downloads ${resource.stats.downloads}\n\n`;
+        responseString += `# HELP spigot_${resource.title}_rating The rating for this plugin.\n# TYPE spigot_${resource.title}_rating counter\nspigot_${resource.title}_rating ${resource.stats.rating}\n\n`;
     });
     res.send(responseString);
 });
