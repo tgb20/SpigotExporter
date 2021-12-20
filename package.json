@@ -1,0 +1,25 @@
+{
+  "name": "spigotexporter",
+  "version": "1.0.0",
+  "description": "Prometheus exporter for Spigot accounts",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgb20/SpigotExporter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tgb20/SpigotExporter/issues"
+  },
+  "homepage": "https://github.com/tgb20/SpigotExporter#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.2",
+    "simple-json-db": "^1.2.3"
+  }
+}
