@@ -8,7 +8,7 @@ const port = config.port;
 const db = new JSONdb('storage.json');
 
 fetchAPIData = (async () => {
-    const spigotData = await axios.get('https://api.spigotmc.org/simple/0.1/index.php?action=getResourcesByAuthor&id=' + config.spigot_id);
+    const spigotData = await axios.get('https://api.spigotmc.org/simple/0.2/index.php?action=getResourcesByAuthor&id=' + config.spigot_id);
     let totalDownloads = 0;
     spigotData.data.forEach(resource => {
         totalDownloads += parseInt(resource.stats.downloads);
